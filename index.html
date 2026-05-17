@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BioChem Niche</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .subtitle {
+            font-size: 1.3rem;
+            color: #a0c4ff;
+            margin-bottom: 30px;
+        }
+        .tagline {
+            font-size: 1rem;
+            color: #8899aa;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        .dna-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0,210,255,0.4);
+        }
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8rem;
+            color: #556677;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="dna-icon">🧬</div>
+        <h1>BioChem Niche</h1>
+        <p class="subtitle">Biology × Chemistry Learning Hub</p>
+        <p class="tagline">
+            Exploring the molecular world — from signal pathways to chemical evolution.<br>
+            Built with curiosity, code, and a passion for life sciences.
+        </p>
+        <a href="https://github.com/Bio-innovator/biochem-website" class="btn" target="_blank">View on GitHub</a>
+    </div>
+    <div class="footer">© 2026 BioChem Niche | Powered by GitHub Pages</div>
+</body>
+</html>
