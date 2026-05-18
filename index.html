@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BioChem Niche | 生物化学学习平台</title>
+  <meta name="description" content="BioChem Niche - AP Biology & AP Chemistry learning platform with knowledge hub, quiz lab, and bilingual glossary for SAT/Biology competition prep.">
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <!-- ==================== 顶部导航栏 ==================== -->
+  <nav class="top-nav" id="topNav">
+    <div class="nav-brand">
+      <span class="brand-icon">⚛️</span>
+      <span class="brand-text" data-en="BioChem Niche" data-zh="BioChem Niche">BioChem Niche</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#" class="nav-link active" data-module="home" data-en="Home" data-zh="首页">首页</a>
+      <a href="#" class="nav-link" data-module="knowledge" data-en="Knowledge" data-zh="知识点">知识点</a>
+      <a href="#" class="nav-link" data-module="quiz" data-en="Quiz Lab" data-zh="小测">小测</a>
+      <a href="#" class="nav-link" data-module="glossary" data-en="Glossary" data-zh="词汇">词汇</a>
+    </div>
+    <div class="nav-controls">
+      <button class="lang-toggle" id="langToggle" title="切换语言 / Switch Language">
+        <span class="lang-current">EN</span>
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="菜单">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ==================== 主内容区域 ==================== -->
+  <main class="main-container">
+
+    <!-- ===== 首页模块 ===== -->
+    <section class="module" id="homeModule">
+      <div class="hero-section">
+        <div class="hero-content">
+          <h1 class="hero-title" data-en="Master AP Biology & Chemistry" data-zh="掌握 AP 生物与化学">掌握 AP 生物与化学</h1>
+          <p class="hero-subtitle" data-en="Comprehensive learning platform with knowledge cards, interactive quizzes, and bilingual glossary — built for SAT & Biology Competition preparation."
+             data-zh="综合学习平台，包含知识点卡片、互动小测和中英词汇表——为 SAT 与生物竞赛备考打造。">
+            综合学习平台，包含知识点卡片、互动小测和中英词汇表——为 SAT 与生物竞赛备考打造。
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" data-module="knowledge" data-en="Start Learning" data-zh="开始学习">开始学习</button>
+            <button class="btn btn-secondary" data-module="quiz" data-en="Take a Quiz" data-zh="去做小测">去做小测</button>
+          </div>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number" id="statTopics">46</div>
+            <div class="stat-label" data-en="Knowledge Topics" data-zh="知识点">知识点</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statQuizzes">100+</div>
+            <div class="stat-label" data-en="Quiz Questions" data-zh="测试题">测试题</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number" id="statGlossary">150+</div>
+            <div class="stat-label" data-en="Glossary Terms" data-zh="专业词汇">专业词汇</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="features-section">
+        <h2 class="section-title" data-en="Three Learning Modules" data-zh="三大学习模块">三大学习模块</h2>
+        <div class="feature-cards">
+          <div class="feature-card" data-module="knowledge">
+            <div class="feature-icon">📚</div>
+            <h3 data-en="Knowledge Hub" data-zh="知识点学习">知识点学习</h3>
+            <p data-en="Complete AP Biology & Chemistry knowledge cards with formulas, key points, and progress tracking."
+               data-zh="完整的 AP 生物与化学知识点卡片，含公式、要点与进度追踪。">
+              完整的 AP 生物与化学知识点卡片，含公式、要点与进度追踪。
+            </p>
+          </div>
+          <div class="feature-card" data-module="quiz">
+            <div class="feature-icon">📝</div>
+            <h3 data-en="Quiz Lab" data-zh="小测平台">小测平台</h3>
+            <p data-en="Interactive quizzes with instant feedback, timed mode, and a smart wrong-answer notebook."
+               data-zh="互动测试，即时反馈，限时模式与智能错题本。">
+              互动测试，即时反馈，限时模式与智能错题本。
+            </p>
+          </div>
+          <div class="feature-card" data-module="glossary">
+            <div class="feature-icon">🔬</div>
+            <h3 data-en="BioChem Glossary" data-zh="词汇词典">词汇词典</h3>
+            <p data-en="Bilingual glossary with A-Z index, search, vocabulary notebook, and Daily 5 recommendations."
+               data-zh="中英词汇表，含字母索引、搜索、生词本与每日推荐。">
+              中英词汇表，含字母索引、搜索、生词本与每日推荐。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 知识点学习模块 ===== -->
+    <section class="module hidden" id="knowledgeModule">
+      <div class="module-header">
+        <h2 data-en="Knowledge Hub" data-zh="知识点学习">知识点学习</h2>
+        <div class="progress-tracker">
+          <div class="progress-bar">
+            <div class="progress-fill" id="knowledgeProgressFill" style="width: 0%"></div>
+          </div>
+          <span class="progress-text" id="knowledgeProgressText" data-en="0% Learned" data-zh="已学 0%">已学 0%</span>
+        </div>
+      </div>
+
+      <div class="knowledge-layout">
+        <!-- 左侧分类导航 -->
+        <aside class="category-nav" id="categoryNav">
+          <div class="search-box">
+            <input type="text" id="knowledgeSearch" placeholder="搜索知识点..." data-en-placeholder="Search topics...">
+          </div>
+          <div class="category-tree" id="categoryTree">
+            <!-- JS 动态生成 -->
+          </div>
+        </aside>
+
+        <!-- 右侧内容区 -->
+        <div class="knowledge-content">
+          <div class="knowledge-filters">
+            <button class="filter-btn active" data-filter="all" data-en="All" data-zh="全部">全部</button>
+            <button class="filter-btn" data-filter="ap-bio" data-en="AP Biology" data-zh="AP 生物">AP 生物</button>
+            <button class="filter-btn" data-filter="ap-chem" data-en="AP Chemistry" data-zh="AP 化学">AP 化学</button>
+          </div>
+          <div class="knowledge-grid" id="knowledgeGrid">
+            <!-- JS 动态生成卡片 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 知识点详情弹窗 -->
+      <div class="modal-overlay hidden" id="knowledgeModal">
+        <div class="modal-content knowledge-modal">
+          <button class="modal-close" id="knowledgeModalClose">&times;</button>
+          <div class="knowledge-detail" id="knowledgeDetail">
+            <!-- JS 动态填充 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 小测平台模块 ===== -->
+    <section class="module hidden" id="quizModule">
+      <div class="module-header">
+        <h2 data-en="Quiz Lab" data-zh="小测平台">小测平台</h2>
+      </div>
+
+      <!-- 小测开始界面 -->
+      <div class="quiz-start" id="quizStart">
+        <div class="quiz-options">
+          <div class="quiz-option-group">
+            <h3 data-en="Subject" data-zh="科目">科目</h3>
+            <div class="option-buttons">
+              <button class="option-btn active" data-quiz-subject="both" data-en="Both" data-zh="全部">全部</button>
+              <button class="option-btn" data-quiz-subject="bio" data-en="AP Biology" data-zh="AP 生物">AP 生物</button>
+              <button class="option-btn" data-quiz-subject="chem" data-en="AP Chemistry" data-zh="AP 化学">AP 化学</button>
+            </div>
+          </div>
+          <div class="quiz-option-group">
+            <h3 data-en="Number of Questions" data-zh="题目数量">题目数量</h3>
+            <div class="option-buttons">
+              <button class="option-btn" data-quiz-count="5">5</button>
+              <button class="option-btn active" data-quiz-count="10">10</button>
+              <button class="option-btn" data-quiz-count="20">20</button>
+            </div>
+          </div>
+          <div class="quiz-option-group">
+            <h3 data-en="Timer Mode" data-zh="限时模式">限时模式</h3>
+            <div class="option-buttons">
+              <button class="option-btn active" data-quiz-timer="off" data-en="Off" data-zh="关闭">关闭</button>
+              <button class="option-btn" data-quiz-timer="on" data-en="On (1 min/q)" data-zh="开启 (每题1分钟)">开启</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary btn-large" id="startQuizBtn" data-en="Start Quiz" data-zh="开始测试">开始测试</button>
+
+        <!-- 快捷入口：错题本 -->
+        <div class="quiz-shortcuts">
+          <button class="shortcut-btn" id="wrongBookBtn">
+            <span>❌</span>
+            <span data-en="Wrong Answer Book" data-zh="错题本">错题本</span>
+            <span class="badge" id="wrongCountBadge">0</span>
+          </button>
+          <button class="shortcut-btn" id="quizStatsBtn">
+            <span>📊</span>
+            <span data-en="Statistics" data-zh="统计">统计</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 答题界面 -->
+      <div class="quiz-interface hidden" id="quizInterface">
+        <div class="quiz-status-bar">
+          <div class="quiz-progress">
+            <span id="quizCurrent">1</span> / <span id="quizTotal">10</span>
+          </div>
+          <div class="quiz-timer hidden" id="quizTimer">
+            ⏱️ <span id="timerDisplay">00:00</span>
+          </div>
+          <div class="quiz-score">
+            <span data-en="Score: " data-zh="得分: ">得分: </span><span id="quizScore">0</span>
+          </div>
+        </div>
+        <div class="quiz-progress-bar">
+          <div class="quiz-progress-fill" id="quizProgressFill" style="width: 10%"></div>
+        </div>
+
+        <div class="quiz-question-area" id="quizQuestionArea">
+          <!-- JS 动态填充题目 -->
+        </div>
+
+        <div class="quiz-controls">
+          <button class="btn btn-secondary hidden" id="nextQuestionBtn" data-en="Next" data-zh="下一题">下一题</button>
+          <button class="btn btn-primary hidden" id="finishQuizBtn" data-en="Finish" data-zh="完成">完成</button>
+        </div>
+      </div>
+
+      <!-- 结果界面 -->
+      <div class="quiz-result hidden" id="quizResult">
+        <div class="result-card">
+          <h2 data-en="Quiz Complete!" data-zh="测试完成！">测试完成！</h2>
+          <div class="result-stats">
+            <div class="result-stat">
+              <div class="result-value" id="resultScore">0/10</div>
+              <div class="result-label" data-en="Score" data-zh="得分">得分</div>
+            </div>
+            <div class="result-stat">
+              <div class="result-value" id="resultPercent">0%</div>
+              <div class="result-label" data-en="Accuracy" data-zh="正确率">正确率</div>
+            </div>
+            <div class="result-stat">
+              <div class="result-value" id="resultTime">0:00</div>
+              <div class="result-label" data-en="Time Used" data-zh="用时">用时</div>
+            </div>
+          </div>
+          <div class="result-feedback" id="resultFeedback"></div>
+          <div class="result-actions">
+            <button class="btn btn-primary" id="restartQuizBtn" data-en="Try Again" data-zh="再来一次">再来一次</button>
+            <button class="btn btn-secondary" id="reviewWrongBtn" data-en="Review Wrong" data-zh="复习错题">复习错题</button>
+            <button class="btn btn-secondary" id="backToQuizStart" data-en="Back" data-zh="返回">返回</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 错题本弹窗 -->
+      <div class="modal-overlay hidden" id="wrongBookModal">
+        <div class="modal-content quiz-modal">
+          <button class="modal-close" id="wrongBookClose">&times;</button>
+          <h3 data-en="Wrong Answer Book" data-zh="错题本">错题本</h3>
+          <div class="wrong-list" id="wrongList">
+            <!-- JS 动态填充 -->
+          </div>
+          <button class="btn btn-danger" id="clearWrongBtn" data-en="Clear All" data-zh="清空错题">清空错题</button>
+        </div>
+      </div>
+
+      <!-- 统计弹窗 -->
+      <div class="modal-overlay hidden" id="statsModal">
+        <div class="modal-content quiz-modal">
+          <button class="modal-close" id="statsClose">&times;</button>
+          <h3 data-en="Quiz Statistics" data-zh="测试统计">测试统计</h3>
+          <div class="stats-content" id="statsContent">
+            <!-- JS 动态填充 -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 词汇表模块 ===== -->
+    <section class="module hidden" id="glossaryModule">
+      <div class="module-header">
+        <h2 data-en="BioChem Glossary" data-zh="词汇词典">词汇词典</h2>
+      </div>
+
+      <div class="glossary-controls">
+        <div class="search-box glossary-search">
+          <input type="text" id="glossarySearch" placeholder="搜索词汇（英文/中文）..." data-en-placeholder="Search terms (EN/CN)...">
+        </div>
+        <div class="glossary-filters">
+          <button class="filter-btn active" data-gfilter="all" data-en="All" data-zh="全部">全部</button>
+          <button class="filter-btn" data-gfilter="bio" data-en="Biology" data-zh="生物">生物</button>
+          <button class="filter-btn" data-gfilter="chem" data-en="Chemistry" data-zh="化学">化学</button>
+        </div>
+      </div>
+
+      <!-- A-Z 索引 -->
+      <div class="az-index" id="azIndex">
+        <!-- JS 动态生成 -->
+      </div>
+
+      <!-- 每日推荐 -->
+      <div class="daily-five" id="dailyFive">
+        <h3>
+          <span data-en="Daily 5" data-zh="每日推荐">每日推荐</span>
+          <button class="btn btn-small" id="refreshDaily" title="换一批">
+            <span>🔄</span>
+          </button>
+        </h3>
+        <div class="daily-cards" id="dailyCards">
+          <!-- JS 动态生成 -->
+        </div>
+      </div>
+
+      <!-- 词汇列表 -->
+      <div class="glossary-list" id="glossaryList">
+        <!-- JS 动态生成 -->
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== 页脚 ==================== -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <p>
+        <span data-en="BioChem Niche - Built for SAT & Bio Competition Prep" data-zh="BioChem Niche - 为 SAT 与生物竞赛备考打造">BioChem Niche - 为 SAT 与生物竞赛备考打造</span>
+      </p>
+      <p class="footer-links">
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> |
+        <span data-en="Pure HTML/CSS/JS. No frameworks." data-zh="纯 HTML/CSS/JS，零框架。">纯 HTML/CSS/JS，零框架。</span>
+      </p>
+    </div>
+  </footer>
+
+  <!-- 回到顶部按钮 -->
+  <button class="back-to-top hidden" id="backToTop" title="回到顶部">↑</button>
+
+  <!-- 脚本文件 -->
+  <script src="./js/data.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
