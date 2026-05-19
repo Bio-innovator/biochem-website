@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BioChem Niche | AP Biology & Chemistry Learning Platform</title>
+<meta name="description" content="BioChem Niche - AP Biology & Chemistry learning platform with knowledge cards, interactive quizzes, bilingual glossary, and biology major exploration for SAT/AP prep.">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+<!-- ==================== 顶部导航栏 ==================== -->
+<nav class="top-nav" id="topNav">
+<div class="nav-brand">
+<span class="brand-icon">&#x269B;</span>
+<span class="brand-text">BioChem Niche</span>
+</div>
+<div class="nav-links" id="navLinks">
+<a href="#" class="nav-link active" data-module="home" data-en="Home" data-zh="&#x9996;&#x9875;">&#x9996;&#x9875;</a>
+<a href="#" class="nav-link" data-module="knowledge" data-en="Knowledge" data-zh="&#x77E5;&#x8BC6;&#x70B9;">&#x77E5;&#x8BC6;&#x70B9;</a>
+<a href="#" class="nav-link" data-module="quiz" data-en="Quiz Lab" data-zh="&#x5C0F;&#x6D4B;">&#x5C0F;&#x6D4B;</a>
+<a href="#" class="nav-link" data-module="glossary" data-en="Glossary" data-zh="&#x8BCD;&#x5178;">&#x8BCD;&#x5178;</a>
+<a href="#" class="nav-link" data-module="majors" data-en="Majors" data-zh="&#x4E13;&#x4E1A;&#x63A2;&#x7D22;">&#x4E13;&#x4E1A;&#x63A2;&#x7D22;</a>
+</div>
+<div class="nav-controls">
+<button class="lang-toggle" id="langToggle" title="&#x5207;&#x6362;&#x8BED;&#x8A00; / Switch Language">
+<span class="lang-current">EN</span>
+</button>
+<button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="&#x83DC;&#x5355;">
+<span></span><span></span><span></span>
+</button>
+</div>
+</nav>
+
+<!-- ==================== 主内容区域 ==================== -->
+<main class="main-container">
+
+<!-- ===== 首页模块 ===== -->
+<section class="module" id="homeModule">
+<div class="hero-section">
+<div class="hero-content">
+<h1 class="hero-title" data-en="Master AP Biology & Chemistry" data-zh="&#x638C;&#x63E1; AP &#x751F;&#x7269;&#x4E0E;&#x5316;&#x5B66;">&#x638C;&#x63E1; AP &#x751F;&#x7269;&#x4E0E;&#x5316;&#x5B66;</h1>
+<p class="hero-subtitle" data-en="Comprehensive learning platform with knowledge cards, interactive quizzes, bilingual glossary, and biology major exploration&#x2014;built for SAT & AP exam preparation." data-zh="&#x7EFC;&#x5408;&#x5B66;&#x4E60;&#x5E73;&#x53F0;&#xFF0C;&#x5305;&#x542B;&#x77E5;&#x8BC6;&#x70B9;&#x5361;&#x7247;&#x3001;&#x4E92;&#x52A8;&#x5C0F;&#x6D4B;&#x3001;&#x4E2D;&#x82F1;&#x8BCD;&#x5178;&#x4E0E;&#x751F;&#x7269;&#x4E13;&#x4E1A;&#x63A2;&#x7D22;&#x2014;&#x2014;&#x4E3A; SAT &#x4E0E; AP &#x8003;&#x8BD5;&#x5907;&#x8003;&#x6253;&#x9020;&#x3002;">&#x7EFC;&#x5408;&#x5B66;&#x4E60;&#x5E73;&#x53F0;&#xFF0C;&#x5305;&#x542B;&#x77E5;&#x8BC6;&#x70B9;&#x5361;&#x7247;&#x3001;&#x4E92;&#x52A8;&#x5C0F;&#x6D4B;&#x3001;&#x4E2D;&#x82F1;&#x8BCD;&#x5178;&#x4E0E;&#x751F;&#x7269;&#x4E13;&#x4E1A;&#x63A2;&#x7D22;&#x2014;&#x2014;&#x4E3A; SAT &#x4E0E; AP &#x8003;&#x8BD5;&#x5907;&#x8003;&#x6253;&#x9020;&#x3002;</p>
+<div class="hero-buttons">
+<button class="btn btn-primary" data-module="knowledge" data-en="Start Learning" data-zh="&#x5F00;&#x59CB;&#x5B66;&#x4E60;">&#x5F00;&#x59CB;&#x5B66;&#x4E60;</button>
+<button class="btn btn-secondary" data-module="quiz" data-en="Take a Quiz" data-zh="&#x53BB;&#x505A;&#x5C0F;&#x6D4B;">&#x53BB;&#x505A;&#x5C0F;&#x6D4B;</button>
+</div>
+</div>
+<div class="hero-stats">
+<div class="stat-card"><div class="stat-number" id="statTopics">0</div><div class="stat-label" data-en="Knowledge Topics" data-zh="&#x77E5;&#x8BC6;&#x70B9;">&#x77E5;&#x8BC6;&#x70B9;</div></div>
+<div class="stat-card"><div class="stat-number" id="statQuizzes">0</div><div class="stat-label" data-en="Quiz Questions" data-zh="&#x6D4B;&#x8BD5;&#x9898;">&#x6D4B;&#x8BD5;&#x9898;</div></div>
+<div class="stat-card"><div class="stat-number" id="statGlossary">0</div><div class="stat-label" data-en="Glossary Terms" data-zh="&#x4E13;&#x4E1A;&#x8BCD;&#x6C47;">&#x4E13;&#x4E1A;&#x8BCD;&#x6C47;</div></div>
+</div>
+</div>
+
+<div class="features-section">
+<h2 class="section-title" data-en="Four Learning Modules" data-zh="&#x56DB;&#x5927;&#x5B66;&#x4E60;&#x6A21;&#x5757;">&#x56DB;&#x5927;&#x5B66;&#x4E60;&#x6A21;&#x5757;</h2>
+<div class="feature-cards">
+<div class="feature-card" data-module="knowledge">
+<div class="feature-icon">&#x1F4DA;</div>
+<h3 data-en="Knowledge Hub" data-zh="&#x77E5;&#x8BC6;&#x70B9;&#x5B66;&#x4E60;">&#x77E5;&#x8BC6;&#x70B9;&#x5B66;&#x4E60;</h3>
+<p data-en="Complete AP Bio & Chem knowledge cards with formulas, key points, and progress tracking." data-zh="&#x5B8C;&#x6574;&#x7684; AP &#x751F;&#x7269;&#x4E0E;&#x5316;&#x5B66;&#x77E5;&#x8BC6;&#x70B9;&#x5361;&#x7247;&#xFF0C;&#x542B;&#x516C;&#x5F0F;&#x3001;&#x8981;&#x70B9;&#x4E0E;&#x8FDB;&#x5EA6;&#x8FFD;&#x8E2A;&#x3002;">&#x5B8C;&#x6574;&#x7684; AP &#x751F;&#x7269;&#x4E0E;&#x5316;&#x5B66;&#x77E5;&#x8BC6;&#x70B9;&#x5361;&#x7247;&#xFF0C;&#x542B;&#x516C;&#x5F0F;&#x3001;&#x8981;&#x70B9;&#x4E0E;&#x8FDB;&#x5EA6;&#x8FFD;&#x8E2A;&#x3002;</p>
+</div>
+<div class="feature-card" data-module="quiz">
+<div class="feature-icon">&#x1F4DD;</div>
+<h3 data-en="Quiz Lab" data-zh="&#x5C0F;&#x6D4B;&#x5E73;&#x53F0;">&#x5C0F;&#x6D4B;&#x5E73;&#x53F0;</h3>
+<p data-en="Interactive quizzes with instant feedback, timed mode, and a smart wrong-answer notebook." data-zh="&#x4E92;&#x52A8;&#x6D4B;&#x8BD5;&#xFF0C;&#x5373;&#x65F6;&#x53CD;&#x9988;&#xFF0C;&#x9650;&#x65F6;&#u6A21;&#x5F0F;&#x4E0E;&#x667A;&#x80FD;&#x9519;&#x9898;&#x672C;&#x3002;">&#x4E92;&#x52A8;&#x6D4B;&#x8BD5;&#xFF0C;&#x5373;&#x65F6;&#u53CD;&#x9988;&#xFF0C;&#x9650;&#x65F6;&#u6A21;&#x5F0F;&#x4E0E;&#x667A;&#x80FD;&#x9519;&#x9898;&#x672C;&#x3002;</p>
+</div>
+<div class="feature-card" data-module="glossary">
+<div class="feature-icon">&#x1F52C;</div>
+<h3 data-en="BioChem Glossary" data-zh="&#x8BCD;&#u5178;&#u8BCD;&#u6C47;">&#u8BCD;&#u5178;&#u8BCD;&#u6C47;</h3>
+<p data-en="Bilingual glossary with A-Z index, search, vocabulary notebook, and Daily 5 recommendations." data-zh="&#u4E2D;&#u82F1;&#u8BCD;&#u6C47;&#u8868;&#uFF0C;&#u542B;&#u5B57;&#u6BCD;&#u7D22;&#u5F15;&#u3001;&#u641C;&#u7D22;&#u3001;&#u751F;&#u8BCD;&#u672C;&#u4E0E;&#u6BCF;&#u65E5;&#u63A8;&#u8350;&#u3002;">&#u4E2D;&#u82F1;&#u8BCD;&#u6C47;&#u8868;&#uFF0C;&#u542B;&#u5B57;&#u6BCD;&#u7D22;&#u5F15;&#u3001;&#u641C;&#u7D22;&#u3001;&#u751F;&#u8BCD;&#u672C;&#u4E0E;&#u6BCF;&#u65E5;&#u63A8;&#u8350;&#u3002;</p>
+</div>
+<div class="feature-card" data-module="majors">
+<div class="feature-icon">&#x1F393;</div>
+<h3 data-en="Biology Majors" data-zh="&#u751F;&#u7269;&#u4E13;&#u4E1A;&#u63A2;&#u7D22;">&#u751F;&#u7269;&#u4E13;&#u4E1A;&#u63A2;&#u7D22;</h3>
+<p data-en="Explore biology undergraduate majors and graduate research directions for college application planning." data-zh="&#u4E86;&#u89E3;&#u751F;&#u7269;&#u672C;&#u79D1;&#u4E13;&#u4E1A;&#u4E0E;&#u7814;&#u7A76;&#u751F;&#u65B9;&#u5411;&#uFF0C;&#u4E3A;&#u7533;&#u8BF7;&#u89C4;&#u5212;&#u505A;&#u51C6;&#u5907;&#u3002;">&#u4E86;&#u89E3;&#u751F;&#u7269;&#u672C;&#u79D1;&#u4E13;&#u4E1A;&#u4E0E;&#u7814;&#u7A76;&#u751F;&#u65B9;&#u5411;&#uFF0C;&#u4E3A;&#u7533;&#u8BF7;&#u89C4划做准备。;</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ===== 知识点学习模块 ===== -->
+<section class="module hidden" id="knowledgeModule">
+<div class="module-header">
+<h2 data-en="Knowledge Hub" data-zh="&#u77E5;&#u8BC6;&#u70B9;&#u5B66;&#u4E60;">&#u77E5;&#u8BC6;&#u70B9;&#u5B66;&#u4E60;</h2>
+<div class="progress-tracker">
+<div class="progress-bar"><div class="progress-fill" id="knowledgeProgressFill" style="width:0%"></div></div>
+<span class="progress-text" id="knowledgeProgressText">0%</span>
+</div>
+</div>
+<div class="knowledge-layout">
+<aside class="category-nav" id="categoryNav">
+<div class="search-box"><input type="text" id="knowledgeSearch" placeholder="&#u641C;&#u7D22;&#u77E5;&#u8BC6;&#u70B9;..."></div>
+<div class="category-tree" id="categoryTree"></div>
+</aside>
+<div class="knowledge-content">
+<div class="knowledge-filters">
+<button class="filter-btn active" data-filter="all" data-en="All" data-zh="&#u5168;&#u90E8;">&#u5168;&#u90E8;</button>
+<button class="filter-btn" data-filter="bio" data-en="AP Biology" data-zh="AP &#u751F;&#u7269;">AP &#u751F;&#u7269;</button>
+<button class="filter-btn" data-filter="chem" data-en="AP Chemistry" data-zh="AP &#u5316;&#u5B66;">AP &#u5316;&#u5B66;</button>
+</div>
+<div class="knowledge-grid" id="knowledgeGrid"></div>
+</div>
+</div>
+<!-- 知识点详情弹窗 -->
+<div class="modal-overlay hidden" id="knowledgeModal">
+<div class="modal-content knowledge-modal">
+<button class="modal-close" id="knowledgeModalClose">&times;</button>
+<div class="knowledge-detail" id="knowledgeDetail"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== 小测平台模块 ===== -->
+<section class="module hidden" id="quizModule">
+<div class="module-header"><h2 data-en="Quiz Lab" data-zh="&#u5C0F;&#u6D4B;&#u5E73;&#u53F0;">&#u5C0F;&#u6D4B;&#u5E73;&#u53F0;</h2></div>
+<div class="quiz-start" id="quizStart">
+<div class="quiz-options">
+<div class="quiz-option-group">
+<h3 data-en="Subject" data-zh="&#u79D1;&#u76EE;">&#u79D1;&#u76EE;</h3>
+<div class="option-buttons">
+<button class="option-btn active" data-quiz-subject="both" data-en="Both" data-zh="&#u5168;&#u90E8;">&#u5168;&#u90E8;</button>
+<button class="option-btn" data-quiz-subject="bio" data-en="AP Biology" data-zh="AP &#u751F;&#u7269;">AP &#u751F;&#u7269;</button>
+<button class="option-btn" data-quiz-subject="chem" data-en="AP Chemistry" data-zh="AP &#u5316;&#u5B66;">AP &#u5316;&#u5B66;</button>
+</div>
+</div>
+<div class="quiz-option-group">
+<h3 data-en="Number of Questions" data-zh="&#u9898;&#u76EE;&#u6570;&#u91CF;">&#u9898;&#u76EE;&#u6570;&#u91CF;</h3>
+<div class="option-buttons">
+<button class="option-btn" data-quiz-count="5">5</button>
+<button class="option-btn active" data-quiz-count="10">10</button>
+<button class="option-btn" data-quiz-count="20">20</button>
+</div>
+</div>
+<div class="quiz-option-group">
+<h3 data-en="Timer Mode" data-zh="&#u9650;&#u65F6;&#u6A21;&#u5F0F;">&#u9650;&#u65F6;&#u6A21;&#u5F0F;</h3>
+<div class="option-buttons">
+<button class="option-btn active" data-quiz-timer="off" data-en="Off" data-zh="&#u5173;&#u95ED;">&#u5173;&#u95ED;</button>
+<button class="option-btn" data-quiz-timer="on" data-en="On (1 min/q)" data-zh="&#u5F00;&#u542F; (&#u6BCF;&#u9898;1&#u5206;&#u949F;)">&#u5F00;&#u542F; (&#u6BCF;&#u9898;1&#u5206;&#u949F;)</button>
+</div>
+</div>
+</div>
+<button class="btn btn-primary btn-large" id="startQuizBtn" data-en="Start Quiz" data-zh="&#u5F00;&#u59CB;&#u6D4B;&#u8BD5;">&#u5F00;&#u59CB;&#u6D4B;&#u8BD5;</button>
+<div class="quiz-shortcuts">
+<button class="shortcut-btn" id="wrongBookBtn"><span>&#x274C;</span><span data-en="Wrong Book" data-zh="&#u9519;&#u9898;&#u672C;">&#u9519;&#u9898;&#u672C;</span><span class="badge" id="wrongCountBadge">0</span></button>
+<button class="shortcut-btn" id="quizStatsBtn"><span>&#x1F4CA;</span><span data-en="Statistics" data-zh="&#u7EDF;&#u8BA1;">&#u7EDF;&#u8BA1;</span></button>
+</div>
+</div>
+<div class="quiz-interface hidden" id="quizInterface">
+<div class="quiz-status-bar">
+<div class="quiz-progress"><span id="quizCurrent">1</span> / <span id="quizTotal">10</span></div>
+<div class="quiz-timer hidden" id="quizTimer">&#x23F1; <span id="timerDisplay">00:00</span></div>
+<div class="quiz-score" data-en="Score: " data-zh="&#u5F97;&#u5206;: ">&#u5F97;&#u5206;: <span id="quizScore">0</span></div>
+</div>
+<div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quizProgressFill" style="width:10%"></div></div>
+<div class="quiz-question-area" id="quizQuestionArea"></div>
+<div class="quiz-controls">
+<button class="btn btn-secondary hidden" id="nextQuestionBtn" data-en="Next" data-zh="&#u4E0B;&#u4E00;&#u9898;">&#u4E0B;&#u4E00;&#u9898;</button>
+<button class="btn btn-primary hidden" id="finishQuizBtn" data-en="Finish" data-zh="&#u5B8C;&#u6210;">&#u5B8C;&#u6210;</button>
+</div>
+</div>
+<div class="quiz-result hidden" id="quizResult">
+<div class="result-card">
+<h2 data-en="Quiz Complete!" data-zh="&#u6D4B;&#u8BD5;&#u5B8C;&#u6210;&#uFF01;">&#u6D4B;&#u8BD5;&#u5B8C;&#u6210;&#uFF01;</h2>
+<div class="result-stats">
+<div class="result-stat"><div class="result-value" id="resultScore">0/10</div><div class="result-label" data-en="Score" data-zh="&#u5F97;&#u5206;">&#u5F97;&#u5206;</div></div>
+<div class="result-stat"><div class="result-value" id="resultPercent">0%</div><div class="result-label" data-en="Accuracy" data-zh="&#u6B63;&#u786E;&#u7387;">&#u6B63;&#u786E;&#u7387;</div></div>
+<div class="result-stat"><div class="result-value" id="resultTime">0:00</div><div class="result-label" data-en="Time" data-zh="&#u7528;&#u65F6;">&#u7528;&#u65F6;</div></div>
+</div>
+<div class="result-feedback" id="resultFeedback"></div>
+<div class="result-actions">
+<button class="btn btn-primary" id="restartQuizBtn" data-en="Try Again" data-zh="&#u518D;&#u6765;&#u4E00;&#u6B21;">&#u518D;&#u6765;&#u4E00;&#u6B21;</button>
+<button class="btn btn-secondary" id="reviewWrongBtn" data-en="Review Wrong" data-zh="&#u590D;&#u4E60;&#u9519;&#u9898;">&#u590D;&#u4E60;&#u9519;&#u9898;</button>
+<button class="btn btn-secondary" id="backToQuizStart" data-en="Back" data-zh="&#u8FD4;&#u56DE;">&#u8FD4;&#u56DE;</button>
+</div>
+</div>
+</div>
+<!-- 错题本弹窗 -->
+<div class="modal-overlay hidden" id="wrongBookModal">
+<div class="modal-content quiz-modal">
+<button class="modal-close" id="wrongBookClose">&times;</button>
+<h3 data-en="Wrong Answer Book" data-zh="&#u9519;&#u9898;&#u672C;">&#u9519;&#u9898;&#u672C;</h3>
+<div class="wrong-list" id="wrongList"></div>
+<button class="btn btn-danger" id="clearWrongBtn" data-en="Clear All" data-zh="&#u6E05;&#u7A7A;&#u9519;&#u9898;">&#u6E05;&#u7A7A;&#u9519;&#u9898;</button>
+</div>
+</div>
+<!-- 统计弹窗 -->
+<div class="modal-overlay hidden" id="statsModal">
+<div class="modal-content quiz-modal">
+<button class="modal-close" id="statsClose">&times;</button>
+<h3 data-en="Quiz Statistics" data-zh="&#u6D4B;&#u8BD5;&#u7EDF;&#u8BA1;">&#u6D4B;&#u8BD5;&#u7EDF;&#u8BA1;</h3>
+<div class="stats-content" id="statsContent"></div>
+</div>
+</div>
+</section>
+
+<!-- ===== 词汇表模块 ===== -->
+<section class="module hidden" id="glossaryModule">
+<div class="module-header"><h2 data-en="BioChem Glossary" data-zh="&#u8BCD;&#u6C47;&#u8BCD;&#u5178;">&#u8BCD;&#u6C47;&#u8BCD;&#u5178;</h2></div>
+<div class="glossary-controls">
+<div class="search-box glossary-search"><input type="text" id="glossarySearch" placeholder="&#u641C;&#u7D22;&#u8BCD;&#u6C47;&#uFF08;&#u82F1;&#u6587;/&#u4E2D;&#u6587;&#uFF09;..."></div>
+<div class="glossary-filters">
+<button class="filter-btn active" data-gfilter="all" data-en="All" data-zh="&#u5168;&#u90E8;">&#u5168;&#u90E8;</button>
+<button class="filter-btn" data-gfilter="bio" data-en="Biology" data-zh="&#u751F;&#u7269;">&#u751F;&#u7269;</button>
+<button class="filter-btn" data-gfilter="chem" data-en="Chemistry" data-zh="&#u5316;&#u5B66;">&#u5316;&#u5B66;</button>
+</div>
+</div>
+<div class="az-index" id="azIndex"></div>
+<div class="daily-five" id="dailyFive">
+<h3><span data-en="Daily 5" data-zh="&#u6BCF;&#u65E5;&#u63A8;&#u8350;">&#u6BCF;&#u65E5;&#u63A8;&#u8350;</span><button class="btn btn-small" id="refreshDaily" title="&#u6362;&#u4E00;&#u6279;">&#x1F504;</button></h3>
+<div class="daily-cards" id="dailyCards"></div>
+</div>
+<div class="glossary-list" id="glossaryList"></div>
+</section>
+
+<!-- ===== 专业探索模块 ===== -->
+<section class="module hidden" id="majorsModule">
+<div class="module-header"><h2 data-en="Biology Major Exploration" data-zh="&#u751F;&#u7269;&#u4E13;&#u4E1A;&#u63A2;&#u7D22;">&#u751F;&#u7269;&#u4E13;&#u4E1A;&#u63A2;&#u7D22;</h2></div>
+<div class="majors-tabs">
+<button class="major-tab active" data-tab="undergrad" data-en="Undergraduate Majors" data-zh="&#u672C;&#u79D1;&#u4E13;&#u4E1A;">&#u672C;&#u79D1;&#u4E13;&#u4E1A;</button>
+<button class="major-tab" data-tab="grad" data-en="Graduate Directions" data-zh="&#u7814;&#u7A76;&#u751F;&#u65B9;&#u5411;">&#u7814;&#u7A76;&#u751F;&#u65B9;&#u5411;</button>
+</div>
+<div class="majors-search-box">
+<input type="text" id="majorsSearch" placeholder="&#u641C;&#u7D22;&#u4E13;&#u4E1A;&#u540D;&#u79F0;..." data-en-placeholder="Search majors...">
+</div>
+<div class="majors-content">
+<div class="majors-panel" id="undergradPanel">
+<div class="tips-section" id="undergradTips"></div>
+<div class="majors-grid" id="undergradGrid"></div>
+</div>
+<div class="majors-panel hidden" id="gradPanel">
+<div class="majors-grid" id="gradGrid"></div>
+</div>
+</div>
+<!-- 专业详情弹窗 -->
+<div class="modal-overlay hidden" id="majorModal">
+<div class="modal-content major-modal">
+<button class="modal-close" id="majorModalClose">&times;</button>
+<div class="major-detail" id="majorDetail"></div>
+</div>
+</div>
+</section>
+</main>
+
+<!-- ==================== 页脚 ==================== -->
+<footer class="site-footer">
+<div class="footer-content">
+<p data-en="Contact us:" data-zh="&#u8054;&#u7CFB;&#u6211;&#u4EEC;:">&#u8054;&#u7CFB;&#u6211;&#u4EEC;: <a href="mailto:18518763993@163.com">18518763993@163.com</a></p>
+<p class="footer-copy">BioChem Niche &copy; 2025 | Built for SAT & AP Exam Preparation</p>
+</div>
+</footer>
+
+<button class="back-to-top hidden" id="backToTop" title="&#u56DE;&#u5230;&#u9876;&#u90E8;">&#x2191;</button>
+
+<script src="./js/data.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
